@@ -12,7 +12,7 @@ fi
 # If the user doesn't supply at least one argument, then give them help
 if [[ "${#}" -lt 1 ]]
 then
-  echo "Usage: ${0} WEB_SERVER" >&2
+  echo "Usage: ${0} {WEB_SERVER}" >&2
   echo 'Please use the above mentioned format with the name of the WEB_SERVER you wish to gather information about' >&2
   exit 1
 fi
@@ -25,3 +25,12 @@ echo -e "IGTOOL : Automates the task of information gathering\n">ig.txt
 # nslookup
 echo -e "1. -----nslookup-----\n">>ig.txt
 nslookup ${WEB_SERVER}>>ig.txt
+
+# whois
+echo -e "\n2. -----whois-----\n">>ig.txt
+whois ${WEB_SERVER}>>ig.txt
+
+# nmap
+echo -e "\n3. -----nmap-----\n">>ig.txt
+sudo nmap -O -F ${WEB_SERVER}>>ig.txt
+
