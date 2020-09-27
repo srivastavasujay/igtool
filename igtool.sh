@@ -34,3 +34,14 @@ whois ${WEB_SERVER}>>ig.txt
 echo -e "\n3. -----nmap-----\n">>ig.txt
 sudo nmap -O -F ${WEB_SERVER}>>ig.txt
 
+# theHarvester
+echo -e "\n4. -----theHarvester-----\n">>ig.txt
+theHarvester -d ${WEB_SERVER} -b all>>ig.txt
+
+# lbd
+echo -e "\n5. -----lbd-----\n">>ig.txt
+lbd ${WEB_SERVER}>>ig.txt
+
+# wafw00f
+echo -e "\n6. -----wafw00f-----\n">>ig.txt
+wafw00f ${WEB_SERVER}>>ig.txt
